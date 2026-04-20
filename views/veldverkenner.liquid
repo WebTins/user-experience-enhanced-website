@@ -1,0 +1,30 @@
+{% render 'partials/head.liquid' %}
+<main class="main-card">
+    <div class="card">
+        
+        <div class="inner-card">
+            <section class="front-card">
+                <h1 class="plant-name">{{ plant.name | default: "Naam van plant"}}</h1>
+                <p class="latin">{{ plant.latin | default: "Latijnse naam van plant"}}</p>
+                <img class="plant-img" src="/assets/teunis.jpg" width="280" alt="teunisbloem">
+                <p class="more-info">Tik voor meer informatie</p>
+            </section>
+
+            <section class="back-card">
+                <h2 class="plant-name">Teunisbloem</h2>
+                <p class="omscription">De zaadknoppen van de plant zijn goed te zien nu</p>
+                <p><strong>Ecologische rol:</strong> Insecten die in de stengels schuilen dienen als voedselbron voor vogels.</p>
+                <p><strong>Gebruik:</strong> de wortel van deze plant is vlezig en sappig en kun je rauw of gekookt eten.</p>
+                <p><strong>Bodem:</strong> Inheems, oorsprong: Middellandse Zee. Populaire moestuinplant.</p>
+                <p><strong>Leuke weetjes:</strong> de zaden zijn zeer voedzaam en rijk aan het omega-6-vetzuur gammalinoleenzuur.</p>
+                <div class="flex-btn">
+                    <button class="back-btn">Terug</button>
+                    <button class="next-btn">Verder</button>
+                </div>
+            </section>
+        </div>
+       
+    </div>
+</main>
+{% render 'partials/navigation.liquid' %}
+{% render 'partials/foot.liquid' %}
