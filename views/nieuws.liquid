@@ -27,7 +27,11 @@
         {% for news in news %}
         <a class="link-wrapper" href="/nieuws/{{ news.slug }}">
             <article class="news-article">
-                <img src="https://fdnd-agency.directus.app/assets/{{news.image}}" alt="">
+                <picture>
+                    <source type="image/avif" srcset="https://fdnd-agency.directus.app/assets/{{news.image}}?format=avif">
+                    <source type="image/webp" srcset="https://fdnd-agency.directus.app/assets/{{news.image}}?format=webp">
+                    <img src="https://fdnd-agency.directus.app/assets/{{news.image}}" alt="">
+                </picture>
                 <p class="label">Bloemenveld</p>
                 <h2>{{ news.title }}</h2>
             </article>
