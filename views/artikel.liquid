@@ -17,6 +17,7 @@
         <p>{{ news.body }}</p>  
     </article>
 
+    {% comment %} MARK: COMMENT {% endcomment %}
     <div class="comment-wrapper">
     {% comment %} Chat input {% endcomment %}
     <section class="comment">
@@ -34,7 +35,7 @@
 
             {% comment %} deze label kan weg {% endcomment %}
             <label>
-                <input class="submit" type="submit" value="Verstuur" class="sumbit-button">
+                <button class="submit" type="submit" value="Verstuur">Verstuur</button>
             </label>
         </form>
     </section>
