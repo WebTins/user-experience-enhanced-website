@@ -121,7 +121,6 @@ body {
                 .story {
                     font-family: Opensans;
                     font-size: var(--font-size-s);
-                    width: 25ch;
                     padding-top: 1rem;
                 }
         }
