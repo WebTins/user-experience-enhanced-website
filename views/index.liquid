@@ -22,17 +22,16 @@
     </section>
 
     <div class="field-news">
-        <section class="news-wrapper">
-            <div class="upper-info">
-                <p class="field">Bloemenveld</p>
-                <p class="ago">4u geleden</p>
-            </div>
+        {% for news in news %}
+        <a href="/nieuws/{{ news.slug }}">
+            <section class="news-wrapper">
+                <div class="upper-info">
+                    <p class="field">Bloemenveld</p>
+                    <p class="ago">4u geleden</p>
+                </div>
 
-            <h4>De na bloei van de duizendblad</h4>
-            <img src="/assets/teunis.jpg" alt="De na bloei van de duizendblad">
+                <h4 class="news-title">{{ news.title }}</h4>
 
-            <p class="story">De duizendblad is nog maar even in de bloei</p>
-        </section>
                 {% comment %} Responsive images {% endcomment %}
                 <picture> 
                     <source type="image/avif" srcset="https://fdnd-agency.directus.app/assets/{{news.image}}?format=avif">
@@ -40,6 +39,9 @@
                     {% comment %} Fallback image {% endcomment %}
                     <img src="https://fdnd-agency.directus.app/assets/{{news.image}}" alt="{{news.title}}" width="250px" height="250px">
                 </picture>
+            </section>
+        </a>
+         {% endfor %} 
     </div>
 </main> 
 
