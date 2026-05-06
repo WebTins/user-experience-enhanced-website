@@ -51,6 +51,7 @@ body {
         flex-direction: column;
         min-height: 100vh;
         padding: 1rem 1rem 80px 1rem;
+        width: 100%;
 
         h1 {
             text-align: center;
@@ -75,15 +76,18 @@ body {
             font-family: Opensans;
         }
 
-        .field-news img {
-            width: 100%;
-        }
-
         .field-news {
-            width: 80%;
-            background-color: var(--background-color-3);
+            display: flex;
+            overflow-x: auto;
+            gap: 2rem;
+            scroll-snap-type: x mandatory;
+            width: 100%;
             border-radius: 10px;
-            padding: 1rem;
+
+            a {
+                text-decoration: none;
+                color: var(--text-color-2);
+            }
 
             .upper-info {
                 display: flex;
@@ -104,30 +108,38 @@ body {
                     font-size: var(--font-size-xs);
                 }
             }
-
-                h4 {
-                    font-family: Opensans;
-                    font-weight: 600;
-                    padding: 1rem 0 1rem 0;
-                }
-
-                img {
-                    align-self: center;
-                    border-radius: 10px;
-                    width: 100%;
-                    height: auto;
-                }
-
-                .story {
-                    font-family: Opensans;
-                    font-size: var(--font-size-s);
-                    padding-top: 1rem;
-                }
         }
 
         .news-wrapper {
             display: flex;
             flex-direction: column;
+            height: 350px;
+            min-width: 325px;
+            max-width: 350px;
+            scroll-snap-align: center;
+            flex-shrink: 0;
+            background-color: var(--background-color-3);
+            overflow: hidden;
+            border-radius: 10px;
+            padding: 1rem;
+
+            picture {
+                display: block;
+                flex: 1;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    border-radius: 10px;
+                }
+            }
+
+            h4 {
+                font-family: Opensans;
+                font-weight: 600;
+                padding: 1rem 0 1rem 0;
+            }
         }
     }
 
