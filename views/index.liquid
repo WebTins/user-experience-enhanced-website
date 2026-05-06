@@ -33,6 +33,13 @@
 
             <p class="story">De duizendblad is nog maar even in de bloei</p>
         </section>
+                {% comment %} Responsive images {% endcomment %}
+                <picture> 
+                    <source type="image/avif" srcset="https://fdnd-agency.directus.app/assets/{{news.image}}?format=avif">
+                    <source type="image/webp" srcset="https://fdnd-agency.directus.app/assets/{{news.image}}?format=webp">
+                    {% comment %} Fallback image {% endcomment %}
+                    <img src="https://fdnd-agency.directus.app/assets/{{news.image}}" alt="{{news.title}}" width="250px" height="250px">
+                </picture>
     </div>
 </main> 
 
