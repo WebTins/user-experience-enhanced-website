@@ -40,8 +40,12 @@ const baseURL = 'https://fdnd-agency.directus.app/items/'
 // Maak een GET route voor de index (meestal doe je dit in de root, als /)
 app.get('/', async function (request, response) {
    // Render index.liquid uit de Views map
+    const res = await fetch(`${baseURL}frankendael_news`);
+    const result = await res.json();
    // Geef hier eventueel data aan mee
-   response.render('index.liquid')
+    response.render('index.liquid', {
+      news: result.data,
+    });
 })
 
 // !!!! ROUTE NAAR VELDVERKENNER !!!!  /)
@@ -49,7 +53,7 @@ app.get('/veldverkenner', async function (request, response) {
    // Render index.liquid uit de Views map
    // Geef hier eventueel data aan mee
    try {
-        const res = await fetch('https://fdnd-agency.directus.app/items/frankendael_plants');
+        const res = await fetch(`${baseURL}frankendael_plants`);
         const result = await res.json();
         
         response.render('veldverkenner.liquid', {
@@ -64,7 +68,7 @@ app.get('/veldverkenner', async function (request, response) {
 app.get('/nieuws', async function (request, response) {
    // Render index.liquid uit de Views map
    // Geef hier eventueel data aan mee
-   const res = await fetch('https://fdnd-agency.directus.app/items/frankendael_news');
+   const res = await fetch(`${baseURL}frankendael_news`);
     const result = await res.json();
 
     response.render('nieuws.liquid', {
@@ -76,7 +80,7 @@ app.get('/nieuws', async function (request, response) {
 app.get('/nieuws/:slug', async function (request, response) {
     // const artikel = tempDummyNews.data.find(item => item.slug === nieuwSlug)
     // deze code hieronder haalt data uit database op
-    const res = await fetch('https://fdnd-agency.directus.app/items/frankendael_news/?filter[slug]=' + request.params.slug);
+    const res = await fetch(`${baseURL}frankendael_news/?filter[slug]=` + request.params.slug);
     const result = await res.json();
 // console.log(result.data[0].id)
     const commentParams = new URLSearchParams({
@@ -97,7 +101,7 @@ app.get('/nieuws/:slug', async function (request, response) {
 app.post('/nieuws/:id/:slug', async (request, response) => {
   
     const postResponse = await fetch(
-      'https://fdnd-agency.directus.app/items/frankendael_news_comments', // API endpoint van de nieuws comments (hier kan je een GET en POST doen)
+      `${baseURL}frankendael_news_comments`, // API endpoint van de nieuws comments (hier kan je een GET en POST doen)
       {
         // dit is JSON object met de benodigde data om wat op te slaan
         method: 'POST', // methode post meegeven zodat de server weet dat er data opgeslagen moet worden
