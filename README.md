@@ -149,7 +149,7 @@ Ook heb ik Empty state toegevoegd
 
 ### Performance responsive images
 
-In deze sprint heb ik gewerkt aan [Responsive Images](https://github.com/WebTins/user-experience-enhanced-website/issues/16) die ervoor zorgen dat de prestatie van de website verbeterd voor gebruikers met oude toestellen die zware afbeeldingen niet aan kunnen.
+In deze sprint heb ik gewerkt aan [Responsive Images](https://github.com/WebTins/user-experience-enhanced-website/issues/11) die ervoor zorgen dat de prestatie van de website verbeterd voor gebruikers met oude toestellen die zware afbeeldingen niet aan kunnen.
 
 [Permance Audit](https://github.com/WebTins/user-experience-enhanced-website/issues/19)
 
